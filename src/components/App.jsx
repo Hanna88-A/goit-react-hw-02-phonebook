@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ContactForm from "./ContactForm/ContactForm"
+import ContactForm from "./ContactForm/ContactForm";
+import Filter from "./Filter/Filter";
 
 export class App extends Component {
   state = {
@@ -13,7 +14,8 @@ export class App extends Component {
       <h1>Phonebook</h1>
       <ContactForm/>
 
-      <h2>Contacts</h2>
+        <h2>Contacts</h2>
+      <Filter/>
       
       </div>
   
