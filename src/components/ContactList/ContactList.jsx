@@ -21,7 +21,7 @@ class ContactList extends Component {
     };
 };
 ContactList.propTypes = {
-    id: PropTypes.number,
+    id: PropTypes.string,
     name: PropTypes.string,
     number: PropTypes.number
 };
