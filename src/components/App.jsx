@@ -5,6 +5,7 @@ import ContactList from "./ContactList/ContactList";
 import { nanoid } from 'nanoid';
 
 
+
 export class App extends Component {
   state = {
     contacts: [
@@ -30,13 +31,11 @@ export class App extends Component {
       number
     };
 
-   
     this.setState(({ contacts }) => ({
         contacts: [newContact, ...contacts ]
     }))
     
    
-    
   };
   
   deleteContact = (idContact) => {
@@ -57,7 +56,7 @@ export class App extends Component {
     const visibleContacts = contacts.filter(({name}) =>
       name.toLowerCase().includes(normalizedFilter)
     );
-    
+    console.log(visibleContacts);
     
     return (
       <div>
@@ -71,10 +70,7 @@ export class App extends Component {
           onDeleteContact={this.deleteContact}
           onSubmit={this.formSubmitHandle}
         />
-      
       </div>
-  
     )
   };
-  
 };
