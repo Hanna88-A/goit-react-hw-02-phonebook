@@ -4,6 +4,7 @@ import Filter from "./Filter/Filter";
 import ContactList from "./ContactList/ContactList";
 import { nanoid } from 'nanoid';
 
+
 export class App extends Component {
   state = {
     contacts: [
@@ -16,7 +17,12 @@ export class App extends Component {
   };
 
   formSubmitHandle = (name, number) => {
-    console.log(name);
+    const { contacts } = this.state;
+
+    if (contacts.find(contact => contact.name === name)) {
+      alert(`${name} is already in contacts`);
+       return
+    }
 
     const newContact = {
       id: nanoid(),
@@ -24,9 +30,11 @@ export class App extends Component {
       number
     };
 
+   
     this.setState(({ contacts }) => ({
         contacts: [newContact, ...contacts ]
-      }))
+    }))
+    
    
     
   };
@@ -49,6 +57,7 @@ export class App extends Component {
     const visibleContacts = contacts.filter(({name}) =>
       name.toLowerCase().includes(normalizedFilter)
     );
+    
     
     return (
       <div>

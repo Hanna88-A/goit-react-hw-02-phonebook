@@ -3,12 +3,10 @@ import React, { Component } from "react";
 class ContactList extends Component {
     
     render() {
-        
-        
         return (
-           
             <ul>
-                {this.props.dataContacts.map(({id, name, number }) => (
+                {this.props.dataContacts.map(({ id, name, number }) => (
+
                     <li key={id}>
                         {name}:
                         <span>{number}</span>
